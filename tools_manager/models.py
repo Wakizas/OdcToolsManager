@@ -27,7 +27,7 @@ class EntityType(models.Model):
 
 class Material(models.Model):
     name = models.CharField(max_length=200)
-    characteristics = models.CharField(max_length=255, blank=True, null=True)
+    characteristics = models.CharField(max_length=500, blank=True, null=True)
     equipment_condition = models.CharField(max_length=100, blank=True, null=True)
     entity = models.ForeignKey(Entity, models.DO_NOTHING)
     material_type = models.ForeignKey('MaterialType', models.DO_NOTHING)
