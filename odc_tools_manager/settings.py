@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'tools_manager', 
+    'tools_manager',
     'rest_framework',
 ]
 
@@ -81,8 +81,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'odc_tools_manager',
-        'USER': 'melvin',
-        'PASSWORD': 'mysql@password3.0',
+        'USER': 'root',
+        'PASSWORD': 'academicien',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
