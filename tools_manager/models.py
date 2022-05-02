@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 
 class Entity(models.Model):
     name = models.CharField(max_length=100, blank=True, null=True)
@@ -56,7 +56,7 @@ class User(models.Model):
         unique=True, max_length=10, blank=True, null=True)
     picture = models.TextField(blank=True, null=True)
     user_type = models.ForeignKey('UserType', models.DO_NOTHING)
-
+    
     class Meta:
         managed = False
         db_table = 'user'
