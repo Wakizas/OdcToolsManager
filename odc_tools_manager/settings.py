@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-h=jvp=e0t5=rda431j--s2x!4y29m3^1ficoxn9(e^1v#j7+aq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -81,8 +81,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'odc_tools_manager',
-        'USER': 'melvin',
-        'PASSWORD': 'mysql@password3.0',
+        'USER': 'laya',
+        'PASSWORD': 'laya',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
@@ -107,6 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'tools_manager.User'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
