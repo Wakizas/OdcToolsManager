@@ -1,5 +1,10 @@
 from django.db import models
+<<<<<<< HEAD
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
+=======
+from django.contrib.auth.models import AbstractBaseUser
+
+>>>>>>> laya
 
 class Entity(models.Model):
     name = models.CharField(max_length=100, blank=True, null=True)
@@ -48,7 +53,7 @@ class MaterialType(models.Model):
         return self.label
 
 
-class User(models.Model):
+class User(AbstractBaseUser):
     id_number = models.CharField(unique=True, max_length=8)
     last_name = models.CharField(max_length=100)
     first_name = models.CharField(max_length=200, blank=True, null=True)
@@ -56,11 +61,23 @@ class User(models.Model):
         unique=True, max_length=10, blank=True, null=True)
     picture = models.TextField(blank=True, null=True)
     user_type = models.ForeignKey('UserType', models.DO_NOTHING)
+<<<<<<< HEAD
     
+=======
+    is_active = models.BooleanField(default=True)
+    last_login = models.DateField()
+    email = models.EmailField(unique=True, max_length=254)
+
+    USERNAME_FIELD = 'email'
+
+>>>>>>> laya
     class Meta:
         managed = False
         db_table = 'user'
 
+    def __str__(self):
+        return self.id_number
+       
 
 class UserMaterial(models.Model):
     user = models.ForeignKey(User, models.DO_NOTHING)
@@ -77,3 +94,6 @@ class UserType(models.Model):
     class Meta:
         managed = False
         db_table = 'user_type'
+    def __str__(self):
+        return self.label
+    

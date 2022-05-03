@@ -33,7 +33,7 @@ SECRET_KEY = 'django-insecure-h=jvp=e0t5=rda431j--s2x!4y29m3^1ficoxn9(e^1v#j7+aq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -86,11 +86,11 @@ WSGI_APPLICATION = 'odc_tools_manager.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': env('DATABASE_NAME'),
-        'USER': env('DATABASE_USER'),
-        'PASSWORD': env('DATABASE_PASSWORD'),
-        'HOST': env('DATABASE_HOST'),
-        'PORT': env('DATABASE_PORT'),
+        'NAME': 'odc_tools_manager',
+        'USER': 'laya',
+        'PASSWORD': 'laya',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
 
@@ -113,6 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'tools_manager.User'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
